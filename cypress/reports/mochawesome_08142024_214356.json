@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-08-14T16:13:26.663Z",
+    "end": "2024-08-14T16:13:56.964Z",
+    "duration": 30301,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "65373ea0-a079-4506-8fd5-6d7b940dd0c7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CreatetaskBOT.cy.js",
+      "file": "cypress\\e2e\\CreatetaskBOT.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2985a6ab-7c61-4942-a727-e3dd15d7268e",
+          "title": "Page Object Model",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login Test and Use Cases",
+              "fullTitle": "Page Object Model Login Test and Use Cases",
+              "timedOut": null,
+              "duration": 26107,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const loginPage = new _LoginPage.default();\nconst messageBoxPage = new _MessageBoxPage.default();\nconst learningInstancePage = new _LearningInstancePage.default();\n// Perform login\nloginPage.setUserName(testData.login.username);\nloginPage.setPassword(testData.login.password);\ncy.get(testData.login.loginButtonSelector).click(); // Use the selector from testData\ncy.wait(4000);\nloginPage.verifyLogin();\n// Use Case 1 - Create Message Box Task\nif (testData.messageBox && testData.messageBox.message) {\n  messageBoxPage.createBot(testData.bot.name, testData.messageBox.message);\n} else {\n  throw new Error('MessageBox data is missing in testData.json');\n}\n// Use Case 2 - Create Learning Instance\ncy.get(\"button[title='Manage']\").click();\ncy.get(\"a[title='Learning Instances']\").click();\ncy.wait(5000);\nlearningInstancePage.createLearningInstance(testData.learningInstance.name, testData.learningInstance.domainType, testData.learningInstance.fieldName, testData.learningInstance.fieldLabel);\nlearningInstancePage.deleteField();\n// Logout\ncy.get(\"a[title='Home']\").click();\ncy.wait(3000);\ncy.get(\"button[title='saeed.automation@gmail.com']\").click();\ncy.wait(3000);\ncy.get(\".command-button__button--primary\").click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.editor-page-header__title-text`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.editor-page-header__title-text`, but never found it.\n    at MessageBoxPage.createBot (webpack://assignmenttask/./cypress/pageObjects/MessageBoxPage.js:6:50)\n    at Context.eval (webpack://assignmenttask/./cypress/e2e/CreatetaskBOT.cy.js:36:27)",
+                "diff": null
+              },
+              "uuid": "77ea4a22-81d2-4f25-b2fa-210254b555f2",
+              "parentUUID": "2985a6ab-7c61-4942-a727-e3dd15d7268e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "77ea4a22-81d2-4f25-b2fa-210254b555f2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 26107,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

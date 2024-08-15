@@ -1,0 +1,19 @@
+{
+  "login": {
+    "username": "saeed.automation@gmail.com",
+    "password": "Automation@CE77",
+    "loginButtonSelector": "button[name='submitLogin']"
+  },
+  "bot": {
+    "name": "TestAutomation987654"
+  },
+  "messageBox": {
+    "message": "Test Message"
+  },
+  "learningInstance": {
+    "name": "TestAutomation0123456",
+    "domainType": "User-defined",
+    "fieldName": "invoice",
+    "fieldLabel": "invoice"
+  }
+}
