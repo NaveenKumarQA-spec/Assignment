@@ -5,13 +5,13 @@
     "loginButtonSelector": "button[name='submitLogin']"
   },
   "bot": {
-    "name": "TestAutomation987654"
+    "name": "AutomationTest001234"
   },
   "messageBox": {
     "message": "Test Message"
   },
   "learningInstance": {
-    "name": "TestAutomation0123456",
+    "name": "CypressAutomationTesting",
     "domainType": "User-defined",
     "fieldName": "invoice",
     "fieldLabel": "invoice"
